@@ -14,7 +14,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $path) {
             Group {
-                if let computers = viewModel.data, !computers.isEmpty {
+                if let computers = viewModel.data,
+                   !computers.isEmpty {
                     DevicesList(devices: computers) { selectedComputer in
                         viewModel.navigateToDetail(navigateDetail: selectedComputer)
                     }
@@ -35,6 +36,7 @@ struct ContentView: View {
             if viewModel.data?.isEmpty ?? true {
                 viewModel.fetchAPI()
             }
+            viewModel.isNetworkAvailable()
         }
     }
 }
