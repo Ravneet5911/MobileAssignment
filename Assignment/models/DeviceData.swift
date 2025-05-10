@@ -23,8 +23,7 @@ struct DeviceData: Decodable, Identifiable, Hashable, Equatable {
     let data: ItemData?
 }
 
-struct ItemData: Codable{
-    
+struct ItemData: Codable {
     let color: String?
     let capacity: String?
     let price: Double?
